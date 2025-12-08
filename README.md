@@ -312,7 +312,8 @@ Ou ouvrir directement dans VS Code avec l'extension Jupyter.
 
 ## 👨‍💻 Auteur
 
-**Soukaina El Hadifi et Mohamed-Saber Elguelta**  
+- **Soukaina El Hadifi** 
+- **Mohamed-Saber Elguelta**  
 
 
 ---
