@@ -57,6 +57,7 @@ desktop.ini
 # Logs
 *.log
 outputs/logs/*.txt
+partie2/scripts/*.log
 
 # Output files (optionnel - décommenter si vous ne voulez pas tracker les outputs)
 # outputs/graphs/*.png
@@ -70,3 +71,8 @@ secrets.json
 
 # PDF du TP (optionnel)
 *.pdf
+
+# Scripts temporaires
+setup_database.sql
+test_connection.py
+partie2/scripts/test_connection.py

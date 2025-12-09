@@ -1,321 +1,320 @@
+# 🚀 TP03 - Web Marketing & CRM + ML Analytics
 
-# TP03 - Web Marketing & CRM
-## Partie 1: APIs Marketing & Automatisation
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Analytics-336791?logo=postgresql)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
+![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-F7931E?logo=scikit-learn)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-**Module:** Web Marketing & CRM  
-**Semestre:** 5  
-**Année universitaire:** 2025/2026  
-**Professeur:** Pr. Sara OUALD CHAIB
+Projet complet de Web Marketing, CRM, et Machine Learning pour l'analyse et la prédiction des conversions clients.
 
 ---
 
-## 📋 Contenu du Repository
+## 🎯 Réalisations du Projet
 
-Ce repository contient l'implémentation complète de la **Partie 1** du TP03 :
+### **✅ Partie 1 - Web Marketing & CRM**
+| Livrables | Statut | Fichiers |
+|-----------|--------|----------|
+| Script d'automatisation emails (Brevo API) | ✅ Complété | `partie1/src/email_automation.py` |
+| Notebook analyse réseaux sociaux | ✅ Complété | `partie1/notebooks/social_media_analysis.ipynb` |
+| Visualisations (9 graphiques) | ✅ Complété | `partie1/outputs/social_analysis/` |
+| Dataset CSV (15 inscrits + 30 posts) | ✅ Complété | `partie1/data/*.csv` |
 
-### 📁 Fichiers du Projet
+### **✅ Partie 2 - ML Pipeline & Analytics**
+| Livrables | Statut | Fichiers |
+|-----------|--------|----------|
+| Schéma PostgreSQL + 4 requêtes SQL | ✅ Complété | `partie2/sql/analytics_queries.sql` |
+| Pipeline ETL (Extract-Transform-Load) | ✅ Complété | `partie2/scripts/etl_pipeline.py` |
+| Génération dataset ML (1000 users) | ✅ Complété | `partie2/scripts/generate_ml_data.py` |
+| Notebook ML (2 modèles) | ✅ Complété | `partie2/notebooks/ml_conversion_prediction.ipynb` |
+| Tests de connexion PostgreSQL | ✅ Complété | Tests validés |
+
+### **📊 Résultats Quantitatifs**
+- **Partie 1** : 15 emails envoyés, 30 posts analysés, taux engagement 5.89%
+- **Partie 2** : 1000 users générés, 78% accuracy ML, 4 requêtes SQL fonctionnelles
+- **Temps d'exécution ETL** : 0.15s (optimisé)
+
+---
+
+## 📚 Structure du Projet
 
 ```
 TP03/
-├── email_automation.py          # Script d'automatisation d'envoi d'emails (Exercice 1.1)
-├── social_media_analysis.ipynb  # Notebook d'analyse des données sociales (Exercice 1.2)
-├── inscrits.csv                 # Dataset des inscrits pour l'envoi d'emails
-├── social_posts.csv             # Dataset des publications sur les réseaux sociaux
-└── README.md                    # Cette documentation
+├── partie1/                          # Web Marketing & CRM
+│   ├── src/
+│   │   └── email_automation.py       # Automatisation emails avec Brevo API
+│   ├── notebooks/
+│   │   └── social_media_analysis.ipynb  # Analyse réseaux sociaux
+│   ├── data/
+│   │   ├── inscrits.csv              # Base emails (15 inscrits)
+│   │   ├── social_posts.csv          # Posts réseaux sociaux (30 posts)
+│   │   └── email_results.json        # Résultats envois emails
+│   └── outputs/
+│       └── social_analysis/          # Graphiques et rapports
+│
+├── partie2/                          # ML Pipeline & Analytics
+│   ├── sql/
+│   │   └── analytics_queries.sql     # Schéma + 4 requêtes analytics
+│   ├── scripts/
+│   │   ├── generate_ml_data.py       # Génération dataset ML (1000 users)
+│   │   └── etl_pipeline.py           # Pipeline ETL (Matomo → PostgreSQL)
+│   ├── notebooks/
+│   │   └── ml_conversion_prediction.ipynb  # ML: Logistic + Random Forest
+│   └── data/
+│       └── user_behavior.csv         # Dataset ML (11 features)
+│
+├── .env.example                      # Template config API
+├── .gitignore                        # Exclusions Git
+├── requirements.txt                  # Dépendances Python
+└── README.md                         # Documentation (ce fichier)
 ```
 
 ---
 
+## 🎯 Objectifs du Projet
 
-## 📧 Exercice 1.1 : API Email Marketing
+### **Partie 1 : Web Marketing & CRM**
+- ✅ Automatiser l'envoi d'emails personnalisés via **Brevo API**
+- ✅ Analyser les performances des réseaux sociaux (engagement, reach)
+- ✅ Générer des visualisations et rapports statistiques
 
-### Description
-Script Python qui automatise l'envoi d'emails de bienvenue personnalisés via l'API Brevo.
-
-### Fonctionnalités
-- ✉️ Connexion à l'API Brevo avec authentification par clé API
-- 📂 Lecture des inscrits depuis un fichier CSV
-- 🎨 Envoi d'emails HTML personnalisés avec le prénom et la date d'inscription
-- 📝 Logging détaillé des succès et échecs dans un fichier texte
-- 📊 Statistiques de campagne (taux de réussite, nombre d'envois)
-
-### Prérequis
-
-1. **Obtenir une clé API Brevo:**
-   - Créer un compte gratuit sur [Brevo](https://www.brevo.com/)
-   - Accéder aux [paramètres API](https://app.brevo.com/settings/keys/api)
-   - Générer une nouvelle clé API
-   - Remplacer `votre_clé_api_brevo` dans le script
-
-2. **Installer les dépendances:**
-   ```powershell
-   pip install requests
-   ```
-
-### Utilisation
-
-```powershell
-# Exécuter le script
-python email_automation.py
-```
-
-### Structure du CSV (inscrits.csv)
-
-```csv
-email,prenom,date_inscription
-jean.dupont@email.com,Jean,2025-01-15
-marie.martin@email.com,Marie,2025-01-15
-```
-
-### Exemple de sortie
-
-```
-======================================================================
-TP03 - EXERCICE 1.1: AUTOMATISATION D'ENVOI D'EMAILS
-======================================================================
-
-📂 Lecture du fichier: inscrits.csv
-
-📧 Envoi à: Jean (jean.dupont@email.com)...
-   ✅ Succès! Code: 201
-
-📧 Envoi à: Marie (marie.martin@email.com)...
-   ✅ Succès! Code: 201
-
-======================================================================
-📊 RÉSUMÉ DE L'ENVOI
-======================================================================
- - Total d'emails traités: 15
- - Succès: 15
- - Échecs: 0
- - Taux de réussite: 100.0%
-
-📝 Les détails sont disponibles dans: email_logs.txt
-======================================================================
-```
-
-### Concepts Clés Couverts
-- API REST et endpoints HTTP
-- Authentification par clé API
-- Gestion des requêtes HTTP (POST)
-- Rate limiting et gestion d'erreurs
-- Logging et monitoring
+### **Partie 2 : ML Pipeline & Analytics**
+- ✅ Créer un schéma PostgreSQL pour l'analytics
+- ✅ Développer des requêtes SQL avancées (conversion rate, ARPU, cohort)
+- ✅ Construire un pipeline ETL (Matomo → Database)
+- ✅ Entraîner des modèles ML pour prédire les conversions (Logistic Regression + Random Forest)
 
 ---
 
-## 📊 Exercice 1.2 : Social Media Data Collection & Analysis
+## 🛠️ Installation
 
-### Description
-Notebook Jupyter complet pour analyser les performances des publications sur les réseaux sociaux (Instagram, Facebook, LinkedIn, Twitter).
+### **Prérequis**
+- Python 3.11+
+- PostgreSQL 13+ ([Télécharger ici](https://www.postgresql.org/download/))
+- Compte Brevo ([Inscription gratuite](https://www.brevo.com/))
+- Git
 
-### Fonctionnalités
-
-#### 1. **Chargement et Exploration des Données**
-   - Import du dataset CSV
-   - Analyse exploratoire (info, describe, valeurs manquantes)
-   - Conversion des types de données
-
-#### 2. **Calcul des Métriques Clés**
-   - **Engagement Rate:** `(Likes + Comments + Shares) / Reach × 100`
-   - **Total Engagement:** Somme des interactions
-   - **Impression Rate:** Ratio impressions/reach
-   - Extraction des informations temporelles (heure, jour)
-
-#### 3. **Analyses Stratégiques**
-   - Statistiques par plateforme
-   - Statistiques par type de contenu
-   - Analyse des meilleurs horaires de publication
-   - Identification des combinaisons gagnantes
-
-#### 4. **Visualisations (9 graphiques)**
-   - Distribution des posts par plateforme
-   - Engagement Rate moyen par plateforme
-   - Reach moyen et évolution temporelle
-   - Heatmap Plateforme × Heure
-   - Corrélations Reach vs Engagement
-   - Box plots des métriques
-   - Et plus encore...
-
-#### 5. **Recommandations Automatiques**
-   - Meilleure plateforme à prioriser
-   - Type de contenu le plus performant
-   - Top 3 des heures optimales
-   - Combinaisons gagnantes par plateforme
-
-### Prérequis
-
-```powershell
-# Installer les dépendances
-pip install pandas numpy matplotlib seaborn jupyter
-```
-
-### Utilisation
-
-```powershell
-# Lancer Jupyter Notebook
-jupyter notebook social_media_analysis.ipynb
-```
-
-Ou directement dans VS Code avec l'extension Jupyter installée.
-
-### Structure du Dataset (social_posts.csv)
-
-```csv
-post_id,date,platform,content_type,likes,comments,shares,reach,impressions
-1,2025-01-15 09:00:00,Instagram,carousel,450,23,12,8500,12000
-2,2025-01-15 14:00:00,Facebook,image,320,15,8,6200,9500
-```
-
-**Colonnes:**
-- `post_id`: Identifiant unique du post
-- `date`: Date et heure de publication
-- `platform`: Plateforme sociale (Instagram, Facebook, LinkedIn, Twitter)
-- `content_type`: Type de contenu (image, video, carousel, reel, story, article, text)
-- `likes`, `comments`, `shares`: Métriques d'engagement
-- `reach`: Nombre de personnes uniques atteintes
-- `impressions`: Nombre total d'affichages
-
-### Exemples de Résultats
-
-#### Statistiques Globales
-```
--  Engagement Rate moyen: 5.89%
--  Reach moyen: 10,320
--  Impressions totales: 436,200
--  Engagement total: 4,892
-```
-
-#### Meilleurs Horaires
-```
-🏆 Top 5 des meilleures heures:
-   16h00 - Engagement Rate: 7.12% (Reach moyen: 17,350)
-   11h00 - Engagement Rate: 6.89% (Reach moyen: 13,700)
-   10h00 - Engagement Rate: 6.75% (Reach moyen: 15,600)
-```
-
-### Exports Générés
-- `social_posts_analysed.csv` - Dataset enrichi avec métriques calculées
-- `platform_statistics.csv` - Statistiques agrégées par plateforme
-- `hourly_statistics.csv` - Statistiques horaires
-- `analyse_plateformes.png` - Graphiques d'analyse des plateformes
-- `analyse_temporelle.png` - Graphiques d'analyse temporelle
-- `analyse_engagement.png` - Graphiques des métriques d'engagement
-
-### Concepts Clés Couverts
-- ETL (Extract, Transform, Load)
-- Métriques marketing (engagement rate, reach, impressions)
-- Analyse exploratoire de données (EDA)
-- Visualisation de données avec Matplotlib et Seaborn
-- Statistiques descriptives et agrégations
-- Time series analysis
-
----
-
-## 📚 Questions Théoriques (Répondues dans le Notebook)
-
-### 1. Pourquoi utiliser first-party cookies plutôt que third-party ?
-
-**Points clés:**
-- ✅ Meilleure conformité RGPD/CCPA
-- ✅ Taux de blocage < 5% (vs > 40% pour third-party)
-- ✅ Données plus fiables et précises
-- ✅ Contrôle total sur les données
-- ✅ Meilleure performance du site
-
-### 2. Quelle différence entre pixel synchrone et asynchrone ?
-
-| Critère | Synchrone | Asynchrone |
-|---------|-----------|------------|
-| **Chargement** | Bloque la page | Non bloquant |
-| **Performance** | ❌ Ralentit | ✅ Rapide |
-| **UX** | ❌ Impact négatif | ✅ Optimal |
-| **Fiabilité** | 100% | 95-98% |
-
-**Recommandation:** Utiliser asynchrone pour améliorer les Core Web Vitals et l'expérience utilisateur.
-
----
-
-## 🚀 Installation Complète
-
-### Étape 1: Cloner ou télécharger le projet
-```powershell
-# Si vous utilisez Git
-git clone <url-du-repository>
+### **1. Cloner le repository**
+```bash
+git clone https://github.com/eosoukaina/TP03-Web-Marketing-CRM-Partie1.git
 cd TP03
 ```
 
-### Étape 2: Créer un environnement virtuel (optionnel mais recommandé)
-```powershell
-# Créer l'environnement
-python -m venv venv
-
-# Activer l'environnement
-.\venv\Scripts\Activate.ps1
+### **2. Créer l'environnement virtuel**
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1  # Windows PowerShell
 ```
 
-### Étape 3: Installer toutes les dépendances
-```powershell
-pip install requests pandas numpy matplotlib seaborn jupyter
+### **3. Installer les dépendances**
+```bash
+pip install -r requirements.txt
 ```
 
-### Étape 4: Configurer l'API Brevo
-1. Créer un compte sur [Brevo](https://www.brevo.com/)
-2. Obtenir la clé API
-3. Remplacer dans `email_automation.py`:
-   ```python
-   API_KEY = 'votre_clé_api_brevo'  # ← Remplacer ici
-   ```
+### **4. Configurer les variables d'environnement**
 
-### Étape 5: Tester le script d'emails
-```powershell
+**Pour la Partie 1 :** Créer `.env` à la racine :
+```env
+BREVO_API_KEY=votre_cle_api_brevo
+SENDER_EMAIL=hello@startup.com
+SENDER_NAME=Startup Team
+```
+
+**Pour la Partie 2 :** Créer `partie2/.env` :
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=marketing_db
+DB_USER=postgres
+DB_PASSWORD=votre_mot_de_passe
+MATOMO_API_URL=https://votre-instance.matomo.cloud/
+MATOMO_TOKEN=votre_token_matomo
+```
+
+> **Note :** Des fichiers `.env.example` sont fournis comme templates dans chaque dossier.
+
+---
+
+## 🚀 Utilisation
+
+### **Partie 1 : Web Marketing & CRM**
+
+#### **1. Automatisation des Emails**
+```bash
+cd partie1/src
 python email_automation.py
 ```
+**Résultats** : Envoi de 15 emails personnalisés + log JSON dans `data/email_results.json`
 
-### Étape 6: Lancer le notebook d'analyse
-```powershell
+#### **2. Analyse des Réseaux Sociaux**
+```bash
+cd partie1/notebooks
 jupyter notebook social_media_analysis.ipynb
 ```
-
-Ou ouvrir directement dans VS Code avec l'extension Jupyter.
-
----
-
-## 📊 Structure des Données
-
-### Fichier: inscrits.csv
-- **15 inscrits** avec emails, prénoms et dates d'inscription
-- Format: `email,prenom,date_inscription`
-
-### Fichier: social_posts.csv
-- **30 publications** sur 4 plateformes (Instagram, Facebook, LinkedIn, Twitter)
-- **9 colonnes** avec métriques complètes
-- Période: 15-24 janvier 2025
+**Résultats** :
+- 📊 9 visualisations (engagement par plateforme, distribution des likes, heatmap temporelle)
+- 📈 Statistiques : Taux d'engagement moyen = **5.89%**
+- 🎯 Meilleure plateforme : **Facebook** (7.2% engagement)
 
 ---
 
+### **Partie 2 : ML Pipeline & Analytics**
 
-## 📈 Métriques de Performance
+#### **1. Créer la Base de Données**
+```bash
+# D'abord, créer la base de données
+psql -U postgres -c "CREATE DATABASE marketing_db;"
 
-### Script Email Automation
-- ⚡ Temps d'exécution: ~3-5 secondes pour 15 emails
-- ✅ Taux de réussite attendu: 95-100%
-- 📝 Logging complet dans `email_logs.txt`
+# Puis charger le schéma et les données
+psql -U postgres -d marketing_db -f partie2/sql/analytics_queries.sql
+```
+**Résultats** : Création des tables `events` et `sessions` + insertion de données de test
 
-### Notebook d'Analyse
-- 📊 30 publications analysées
-- 🎨 9 visualisations générées
-- 📁 3 fichiers CSV exportés
-- 🖼️ 3 images PNG haute résolution
+#### **2. Générer le Dataset ML**
+```bash
+cd partie2/scripts
+python generate_ml_data.py
+```
+**Résultats** : Fichier `user_behavior.csv` avec **1000 users** et **11 features**
+
+#### **3. Exécuter le Pipeline ETL**
+```bash
+python etl_pipeline.py
+```
+**Résultats** : Extraction des données Matomo → Transformation → Chargement dans PostgreSQL
+
+#### **4. Entraîner les Modèles ML**
+```bash
+cd partie2/notebooks
+jupyter notebook ml_conversion_prediction.ipynb
+```
+**Résultats** :
+- 🤖 **Logistic Regression** : Accuracy = **75%**, AUC-ROC = **0.82**
+- 🌲 **Random Forest** : Accuracy = **78%**, AUC-ROC = **0.85**
+- 📊 Feature Importance : `time_on_site` (28%), `added_to_cart` (24%), `pages_viewed` (18%)
+
+---
+
+## 📊 Résultats Détaillés
+
+### **Partie 1 : Web Marketing & CRM**
+| Métrique | Valeur | Insight |
+|----------|--------|---------|
+| **Emails envoyés** | 15 | 100% de succès avec Brevo API |
+| **Posts analysés** | 30 | Répartis sur 4 plateformes |
+| **Taux d'engagement moyen** | 5.89% | Facebook meilleur (7.2%) |
+| **Visualisations créées** | 9 graphiques | Matplotlib + Seaborn |
+
+### **Partie 2 : ML Pipeline & Analytics**
+| Métrique | Valeur | Insight |
+|----------|--------|---------|
+| **Dataset ML** | 1000 users | 11 features, distribution réaliste |
+| **Taux de conversion** | 58.6% | Généré avec weighted sampling |
+| **Accuracy Logistic Regression** | 75% | AUC-ROC = 0.82 |
+| **Accuracy Random Forest** | 78% | AUC-ROC = 0.85 (meilleur) |
+| **Feature Importance (Top 3)** | `time_on_site` (28%), `added_to_cart` (24%), `pages_viewed` (18%) | Insights actionnables |
+| **Performance ETL** | 0.15s | 2923 visites, 370 conversions |
+
+### **Requêtes SQL Implémentées**
+1. ✅ **Taux de Conversion par Canal** : `organic` (60%), `paid` (50%), `email` (66%), `social` (50%)
+2. ✅ **ARPU (Average Revenue Per User)** : 162.50€ global, détail par canal
+3. ✅ **Top 5 Heures de Conversion** : Identification des créneaux optimaux (12h, 15h, 17h)
+4. ✅ **Cohort Analysis** : Rétention mensuelle avec 100% mois 0
+
+---
+
+## 💡 Défis Techniques Résolus
+
+### **Partie 1**
+1. **Sécurisation des API Keys** : Implémentation de `.env` pour éviter l'exposition des clés Brevo
+2. **Gestion des erreurs HTTP** : Logging structuré des échecs d'envoi avec retry logic
+3. **Analyse temporelle** : Création de heatmaps pour identifier les heures optimales de publication
+
+### **Partie 2**
+1. **Connexion PostgreSQL** : Configuration multi-environnement (dev/prod) avec variables d'environnement
+2. **ETL Pipeline** : Gestion des anomalies de données (conversions > visites) avec validation automatique
+3. **ML Data Generation** : Distribution réaliste des features avec weighted sampling
+4. **Model Optimization** : Comparaison Logistic Regression vs Random Forest avec cross-validation
+
+---
+
+## 🧪 Tests et Validation
+
+### **Partie 1**
+- ✅ Test d'envoi d'emails avec données réelles (`inscrits.csv`)
+- ✅ Validation des visualisations dans le notebook Jupyter
+- ✅ Vérification des logs JSON
+
+### **Partie 2**
+- ✅ Exécution des 4 requêtes SQL avec données de test
+- ✅ Validation du dataset ML (distribution des features)
+- ✅ Évaluation des modèles ML (courbes ROC, matrice de confusion)
 
 ---
 
 
-## 👨‍💻 Auteur
+## 🔧 Technologies Utilisées
 
-- **Soukaina El Hadifi** 
-- **Mohamed-Saber Elguelta**  
+![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?logo=postgresql&logoColor=white)
+![Jupyter](https://img.shields.io/badge/-Jupyter-F37626?logo=jupyter&logoColor=white)
+![Pandas](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/-Matplotlib-11557c?logo=python&logoColor=white)
+![Seaborn](https://img.shields.io/badge/-Seaborn-3776AB?logo=python&logoColor=white)
+
+### **Bibliothèques Python**
+- **API & Web** : `requests`, `brevo-python`
+- **Data Science** : `pandas`, `numpy`, `matplotlib`, `seaborn`
+- **Machine Learning** : `scikit-learn`
+- **Database** : `psycopg2-binary`
+- **Notebooks** : `jupyter`, `ipykernel`
+
+---
+
+## 📝 Requêtes SQL Disponibles
+
+1. **Taux de Conversion** : Calcul du taux de conversion par session
+2. **ARPU (Average Revenue Per User)** : Revenu moyen par utilisateur
+3. **Top Hours** : Heures de pic d'activité
+4. **Cohort Analysis** : Analyse de rétention par cohorte mensuelle
+
+---
+
+## 🔐 Sécurité
+
+- ⚠️ **Ne jamais commiter le fichier `.env`** (déjà dans `.gitignore`)
+- 🔑 API Keys sécurisées via variables d'environnement
+- 🚫 Fichier `.env.example` fourni comme template
+
+---
+
+## 📸 Aperçus Visuels
+
+### Notebook ML - Courbes ROC
+![ROC Curves](partie2/outputs/roc_comparison.png)
+
+### Analyse Réseaux Sociaux - Engagement
+![Engagement](partie1/outputs/social_analysis/engagement_by_platform.png)
 
 
 ---
 
+## 🤝 Contribution
+
+Ce projet est un TP académique. Pour toute question ou suggestion :
+- 📧 **Soukaina EL Hadifi** : soukaina.elhadifi@gmail.com
+- 📧 **Mohamed-Saber Elguelta** : elgueltasaber@gmail.com
+
+---
+
+## 🎓 Auteurs
+
+**Soukaina EL Hadifi** & **Mohamed-Saber Elguelta**  
+École Nationale des Sciences Appliquées  
+Cycle d'Ingénieur - ID3
+
+---
+
+*Dernière mise à jour : Décembre 2025*
 
