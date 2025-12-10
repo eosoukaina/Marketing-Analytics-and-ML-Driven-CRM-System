@@ -292,11 +292,10 @@ jupyter notebook ml_conversion_prediction.ipynb
 ## 📸 Aperçus Visuels
 
 ### Notebook ML - Courbes ROC
-![ROC Curves](partie2/outputs/roc_comparison.png)
+<img width="989" height="690" alt="Image" src="https://github.com/user-attachments/assets/24de8ec3-bf77-4634-95a7-3df6baef48cc" />
 
 ### Analyse Réseaux Sociaux - Engagement
-![Engagement](partie1/outputs/social_analysis/engagement_by_platform.png)
-
+<img width="409" height="326" alt="Image" src="https://github.com/user-attachments/assets/814ab28e-b789-49fc-84e6-1f045dce4847" />
 
 ---
 
