@@ -303,13 +303,12 @@ jupyter notebook ml_conversion_prediction.ipynb
 
 Ce projet est un TP académique. Pour toute question ou suggestion :
 - 📧 **Soukaina EL Hadifi** : soukaina.elhadifi@gmail.com
-- 📧 **Mohamed-Saber Elguelta** : elgueltasaber@gmail.com
-- 📧 **Salma Chakouri** : 
+  
 ---
 
 ## 🎓 Auteurs
 
-**Soukaina EL Hadifi** & **Mohamed-Saber Elguelta** & **Salma Chakouri** 
+**Soukaina EL Hadifi** 
 École Nationale des Sciences Appliquées  
 Cycle d'Ingénieur - ID3
 
