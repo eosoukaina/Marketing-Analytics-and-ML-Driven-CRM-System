@@ -33,7 +33,7 @@ This project demonstrates comprehensive **data engineering skills** through a re
 
 ### **✅ Part 1 - Marketing Automation & Social Media Analytics**
 | Deliverable | Status | Files |
-|-----------|--------|----------|
+|-------------|--------|-------|
 | Email automation script (Brevo API) | ✅ Completed | `partie1/src/email_automation.py` |
 | Social media analysis notebook | ✅ Completed | `partie1/notebooks/social_media_analysis.ipynb` |
 | Visualizations (9 charts) | ✅ Completed | `partie1/outputs/social_analysis/` |
@@ -41,7 +41,7 @@ This project demonstrates comprehensive **data engineering skills** through a re
 
 ### **✅ Part 2 - Data Engineering & Machine Learning Pipeline**
 | Deliverable | Status | Files |
-|-----------|--------|----------|
+|-------------|--------|-------|
 | PostgreSQL schema + 4 SQL queries | ✅ Completed | `partie2/sql/analytics_queries.sql` |
 | ETL Pipeline (Extract-Transform-Load) | ✅ Completed | `partie2/scripts/etl_pipeline.py` |
 | ML dataset generation (1000 users) | ✅ Completed | `partie2/scripts/generate_ml_data.py` |
@@ -55,42 +55,43 @@ This project demonstrates comprehensive **data engineering skills** through a re
 - **SQL Analytics**: 4 production-ready queries (conversion rates, ARPU, cohort analysis)
 
 ---
-�️ Project Structure
+
+## 🗂️ Project Structure
 
 ```
 marketing-analytics-ml-crm/
 ├── partie1/                          # Marketing Automation & Analytics
-├── partie1/                          # Web Marketing & CRM
 │   ├── src/
-│   │   └── email_automation.py       # Automatisation emails avec Brevo API
+│   │   └── email_automation.py       # Automated emails with Brevo API
 │   ├── notebooks/
-│   │   └── social_media_analysis.ipynb  # Analyse réseaux sociaux
+│   │   └── social_media_analysis.ipynb  # Social media analysis
 │   ├── data/
-│   │   ├── inscrits.csv              # Base emails (15 inscrits)
-│   │   ├── social_posts.csv          # Posts réseaux sociaux (30 posts)
-│   │   └── email_results.json        # Résultats envois emails
+│   │   ├── inscrits.csv              # Email database (15 subscribers)
+│   │   ├── social_posts.csv          # Social media posts (30 posts)
+│   │   └── email_results.json        # Email delivery results
 │   └── outputs/
-│       └── social_analysis/          # Graphiques et rapports
-│Data Engineering & ML Pipeline
-├── partie2/                          # ML Pipeline & Analytics
+│       └── social_analysis/          # Charts and reports
+│
+├── partie2/                          # Data Engineering & ML Pipeline
 │   ├── sql/
-│   │   └── analytics_queries.sql     # Schéma + 4 requêtes analytics
+│   │   └── analytics_queries.sql     # Schema + 4 analytics queries
 │   ├── scripts/
-│   │   ├── generate_ml_data.py       # Génération dataset ML (1000 users)
-│   │   └── etl_pipeline.py           # Pipeline ETL (Matomo → PostgreSQL)
+│   │   ├── generate_ml_data.py       # ML dataset generation (1000 users)
+│   │   └── etl_pipeline.py           # ETL Pipeline (Matomo → PostgreSQL)
 │   ├── notebooks/
 │   │   └── ml_conversion_prediction.ipynb  # ML: Logistic + Random Forest
 │   └── data/
-│       └── user_behavior.csv         # Dataset ML (11 features)
+│       └── user_behavior.csv         # ML dataset (11 features)
 │
-├── .env.example                      # Template config API
-├── .gitignore                        # Exclusions Git
-├── requirements.txt                  # Dépendances Python
-└── README.md                         # Documentation (ce fichier)
+├── .env.example                      # API configuration template
+├── .gitignore                        # Git exclusions
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Documentation (this file)
 ```
 
 ---
-Technical Objectives & Skills Demonstrated
+
+## 🎓 Technical Objectives & Skills Demonstrated
 
 ### **Data Engineering**
 - ✅ Designed and implemented **ETL pipeline** (Matomo API → PostgreSQL)
@@ -155,32 +156,29 @@ DB_NAME=marketing_db
 DB_USER=postgres
 DB_PASSWORD=your_password
 MATOMO_API_URL=https://your-instance.matomo.cloud/
+```
 
-### Social Media Analytics - Engagement Metrics
-<img width="409" height="326" alt="Image" src="https://github.com/user-attachments/assets/814ab28e-b789-49fc-84e6-1f045dce4847" />
-```env
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=marketing_db
-DB_USER=postgres
-DB_PASSWORD=votre_mot_de_passe
-MATOMO_sage Guide
-
-### **Part 1: Marketing Automation & Analytics**
-
-#### **1. Email Automationmple` sont fournis comme templates dans chaque dossier.
+⚠️ **Note**: `.env.example` templates are provided in each folder.
 
 ---
 
-## 🚀 Utilisation
-Output**: 15 personalized emails sent + JSON logs in `data/email_results.json`
+## 🚀 Usage Guide
 
-#### **2. Social Media Analytics
-#### **1. Automatisation des Emails**
+### **Part 1: Marketing Automation & Analytics**
+
+#### **1. Email Automation**
 ```bash
 cd partie1/src
 python email_automation.py
-``Output**:
+```
+**Output**: 15 personalized emails sent + JSON logs in `data/email_results.json`
+
+#### **2. Social Media Analytics**
+```bash
+cd partie1/notebooks
+jupyter notebook social_media_analysis.ipynb
+```
+**Output**:
 - 📊 9 visualizations (platform engagement, likes distribution, temporal heatmaps)
 - 📈 Statistics: Average engagement rate = **5.89%**
 - 🎯 Best performing platform: **Facebook** (7.2% engagement)
@@ -189,59 +187,53 @@ python email_automation.py
 
 ### **Part 2: Data Engineering & ML Pipeline**
 
-#### **1. Database Setuppar plateforme, distribution des likes, heatmap temporelle)
-- 📈 Statistiques : Taux d'engagement moyen = **5.89%**
-- 🎯 Meilleure plateforme : **Facebook** (7.2% engagement)
-
----
-
-### **Partie 2 : ML Pipeline & Analytics**
-
-##Output**: Tables `events` and `sessions` created + test data inserted
-
-#### **2. Generate ML Datasetnées
+#### **1. Database Setup**
+```bash
+# Create database
 psql -U postgres -c "CREATE DATABASE marketing_db;"
 
-# Puis charger le schéma et les données
+# Load schema and test data
 psql -U postgres -d marketing_db -f partie2/sql/analytics_queries.sql
-``Output**: `user_behavior.csv` file with **1000 users** and **11 features**
+```
+**Output**: Tables `events` and `sessions` created + test data inserted
 
-#### **3. Run ETL Pipeline
-#### **2. Générer le Dataset ML**
+#### **2. Generate ML Dataset**
 ```bash
 cd partie2/scripts
 python generate_ml_data.py
 ```
-**Résultats** : Fichier `user_behavior.csv` avec **1000 users** et **11 features**
+**Output**: `user_behavior.csv` file with **1000 users** and **11 features**
 
-#### **3. Exécuter le Pipeline ETL**
+#### **3. Run ETL Pipeline**
 ```bash
-pyOutput**: Matomo data extraction → Transformation → Loading into PostgreSQL
+python etl_pipeline.py
+```
+**Output**: Matomo data extraction → Transformation → Loading into PostgreSQL
 
-#### **4. Train ML Modelsnées Matomo → Transformation → Chargement dans PostgreSQL
-
-#### **4. Entraîner les Modèles ML**
+#### **4. Train ML Models**
 ```bash
 cd partie2/notebooks
-juOutput**:
+jupyter notebook ml_conversion_prediction.ipynb
+```
+**Output**:
 - 🤖 **Logistic Regression**: Accuracy = **75%**, AUC-ROC = **0.82**
 - 🌲 **Random Forest**: Accuracy = **78%**, AUC-ROC = **0.85** ⭐ Best performer
-- 📊 **Top Features**on** : Accuracy = **75%**, AUC-ROC = **0.82**
-- 🌲 **Random Forest** : Accuracy = **78%**, AUC-ROC = **0.85**
-- 📊 Feature Importance : `time_on_site` (28%), `added_to_cart` (24%), `pages_viewed` (18%)
+- 📊 **Top Features**: `time_on_site` (28%), `added_to_cart` (24%), `pages_viewed` (18%)
 
----Detailed Results & Analytics
+---
 
-### **Part 1: Marketing Automation
-etric | Value | Insight |
+## 📊 Detailed Results & Analytics
+
+### **Part 1: Marketing Automation**
+| Metric | Value | Insight |
 |--------|-------|---------|
 | **Emails sent** | 15 | 100% success rate with Brevo API |
 | **Posts analyzed** | 30 | Across 4 social platforms |
 | **Avg engagement rate** | 5.89% | Facebook top performer (7.2%) |
 | **Visualizations** | 9 charts | Matplotlib + Seaborn |
 
-### **Part 2: Data Pipeline & MLes | Matplotlib + Seaborn |
-etric | Value | Insight |
+### **Part 2: Data Pipeline & ML**
+| Metric | Value | Insight |
 |--------|-------|---------|
 | **ML dataset** | 1000 users | 11 features, realistic distribution |
 | **Conversion rate** | 58.6% | Generated with weighted sampling |
@@ -254,26 +246,11 @@ etric | Value | Insight |
 1. ✅ **Conversion Rate by Channel**: `organic` (60%), `paid` (50%), `email` (66%), `social` (50%)
 2. ✅ **ARPU (Average Revenue Per User)**: €162.50 overall, detailed by channel
 3. ✅ **Top 5 Conversion Hours**: Peak time identification (12h, 15h, 17h)
-4. ✅ **Cohort Analysis**: Monthly retention tracking with 100% baselineil par canal
-3. ✅ **Top 5 Heures de Conversion** : Identification des créneaux optimaux (12h, 15h, 17h)
-4. ✅ **Cohort Analysis** : Rétention mensuelle avec 100% mois 0
+4. ✅ **Cohort Analysis**: Monthly retention tracking with 100% baseline
 
----Technical Challenges Solved
+---
 
-### **Data Engineering**
-1. **PostgreSQL Connection**: Multi-environment configuration (dev/prod) with environment variables
-2. **ETL Pipeline Optimization**: Data anomaly handling (conversions > visits) with automated validation
-3. **ML Data Generation**: Realistic feature distribution using weighted sampling techniques
-4. **Pipeline Performance**: Achieved 0.15s execution time through query optimization
-
-### **Machine Learning**
-1. **Model Selection**: Systematic comparison of Logistic Regression vs Random Forest with cross-validation
-2. **Feature Engineering**: Identified top predictive features through importance analysis
-3. **Class Imbalance**: Handled conversion rate distribution (58.6%) effectively
-
-### **API Integration**
-1. **API Key Security**: Implemented `.env` configuration to prevent credential exposure
-2. **Erroring & Validation
+## ✅ Testing & Validation
 
 ### **Data Quality**
 - ✅ Email delivery testing with real data (`inscrits.csv`)
@@ -287,56 +264,57 @@ etric | Value | Insight |
 
 ### **SQL & Database**
 - ✅ Execution of 4 analytics queries with test data
-## 🔧 Tech Stackarking
-- ✅ Validation des visualisations dans le notebook Jupyter
-- ✅ Vérification des logs JSON
-
-### **Partie 2**
-- ✅ Exécution des 4 requêtes SQL avec données de test
-- ✅ Validation du dataset ML (distribution des features)
-- ✅ Évaluation des modèles ML (courbes ROC, matrice de confusion)
+- ✅ Database connection testing
+- ✅ Verification of visualizations in Jupyter notebooks
 
 ---
 
+## 🔧 Tech Stack
 
-## 🔧 Technologies Utilisées
-Core Technologies**
+### **Core Technologies**
 - **Languages**: Python 3.11+
 - **Database**: PostgreSQL 13+
 - **API Integration**: Brevo (SendinBlue), Matomo Analytics
 - **Data Processing**: Pandas, NumPy
 - **Machine Learning**: Scikit-learn
 - **Visualization**: Matplotlib, Seaborn
-- **Notebooks**: Jupyter, IPythonadge/-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)
+- **Notebooks**: Jupyter, IPython
+
+### **Python Libraries**
+![Pandas](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/-NumPy-013243?logo=numpy&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/-Matplotlib-11557c?logo=python&logoColor=white)
-![SeabSQL Analytics Queries
+![Seaborn](https://img.shields.io/badge/-Seaborn-9cf?logo=python&logoColor=white)
 
-1. **Conversion Rate Analysis**: Session-based conversion tracking by marketing channel
-2. **ARPU Calculation**: Average revenue per user with channel segmentation
-3. **Peak Hours Detection**: Temporal analysis for optimal engagement windows
-4. **Cohort Retention**: Monthly cohort analysis for user retention metrics
-- **Database** : `psycopg2-binary`
-- **Notebooks** : `jupyter`, `ipykernel`
+- **Data Science**: `pandas`, `numpy`, `scikit-learn`
+- **Visualization**: `matplotlib`, `seaborn`
+- **API**: `requests`, `sib-api-v3-sdk` (Brevo)
+- **Database**: `psycopg2-binary`
+- **Notebooks**: `jupyter`, `ipykernel`
 
----ecurity & Best Practices
+---
+
+## 🔐 Security & Best Practices
 
 - ⚠️ **Never commit `.env` files** (already in `.gitignore`)
 - 🔑 API keys secured via environment variables
 - 📝 `.env.example` templates provided for reference
 - 🛡️ SQL injection prevention through parameterized queries
-- 🔒 Database credentials stored securelyversion par session
-2. **ARPU (Average Revenue Per User)** : Revenu moyen par utilisateur
-3. **TVisual Outputs
+- 🔒 Database credentials stored securely
 
-### ML Model Performance - ROC Curves
 ---
 
-## Social Media Analytics - Engagement Metrics
+## 📈 Key SQL Analytics Queries
 
-- ⚠️ **Ne jamais commiter le fichier `.env`** (déjà dans `.gitignore`)
-- 🔑 API Keys sécurisées via variables d'environnement
-- 🚫 Fichier `.env.example` fourni comme template
-📚 Learning Outcomes
+1. **Conversion Rate Analysis**: Session-based conversion tracking by marketing channel
+2. **ARPU Calculation**: Average revenue per user with channel segmentation
+3. **Peak Hours Detection**: Temporal analysis for optimal engagement windows
+4. **Cohort Retention**: Monthly cohort analysis for user retention metrics
+
+---
+
+## 📚 Learning Outcomes
 
 This project demonstrates proficiency in:
 - **ETL Development**: Building production-ready data pipelines
@@ -376,18 +354,4 @@ This project is part of academic coursework and is shared for educational and po
 
 ---
 
-*Last updated: December 2025 | Built with ❤️ for Data Engineeringtoute question ou suggestion :
-- 📧 **Soukaina EL Hadifi** : soukaina.elhadifi@gmail.com
-  
----
-
-## 🎓 Auteurs
-
-**Soukaina EL Hadifi** 
-École Nationale des Sciences Appliquées  
-Cycle d'Ingénieur - ID3
-
----
-
-*Dernière mise à jour : Décembre 2025*
-
+*Last updated: December 2025 | Built with passion for Data Engineering*
