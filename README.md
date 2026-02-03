@@ -1,4 +1,4 @@
-# � Marketing Analytics & ML-Driven CRM System
+# 📊 Marketing Analytics & ML-Driven CRM System
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Analytics-336791?logo=postgresql)
@@ -32,21 +32,21 @@ This project demonstrates comprehensive **data engineering skills** through a re
 ## 📋 Project Deliverables
 
 ### **✅ Part 1 - Marketing Automation & Social Media Analytics**
-| Livrables | Statut | Fichiers |
+| Deliverable | Status | Files |
 |-----------|--------|----------|
-| Script d'automatisation emails (Brevo API) | ✅ Complété | `partie1/src/email_automation.py` |
-| Notebook analyse réseaux sociaux | ✅ Complété | `partie1/notebooks/social_media_analysis.ipynb` |
-| Visualisations (9 graphiques) | ✅ Complété | `partie1/outputs/social_analysis/` |
-| Dataset CSV (15 inscrits + 30 posts) | ✅ Complété | `partie1/data/*.csv` |
+| Email automation script (Brevo API) | ✅ Completed | `partie1/src/email_automation.py` |
+| Social media analysis notebook | ✅ Completed | `partie1/notebooks/social_media_analysis.ipynb` |
+| Visualizations (9 charts) | ✅ Completed | `partie1/outputs/social_analysis/` |
+| CSV datasets (15 subscribers + 30 posts) | ✅ Completed | `partie1/data/*.csv` |
 
 ### **✅ Part 2 - Data Engineering & Machine Learning Pipeline**
-| Livrables | Statut | Fichiers |
+| Deliverable | Status | Files |
 |-----------|--------|----------|
-| Schéma PostgreSQL + 4 requêtes SQL | ✅ Complété | `partie2/sql/analytics_queries.sql` |
-| Pipeline ETL (Extract-Transform-Load) | ✅ Complété | `partie2/scripts/etl_pipeline.py` |
-| Génération dataset ML (1000 users) | ✅ Complété | `partie2/scripts/generate_ml_data.py` |
-| Notebook ML (2 modèles) | ✅ Complété | `partie2/notebooks/ml_conversion_prediction.ipynb` |
-| Tests de connexion PostgreSQL | ✅ Complété | Tests validés |
+| PostgreSQL schema + 4 SQL queries | ✅ Completed | `partie2/sql/analytics_queries.sql` |
+| ETL Pipeline (Extract-Transform-Load) | ✅ Completed | `partie2/scripts/etl_pipeline.py` |
+| ML dataset generation (1000 users) | ✅ Completed | `partie2/scripts/generate_ml_data.py` |
+| ML notebook (2 models) | ✅ Completed | `partie2/notebooks/ml_conversion_prediction.ipynb` |
+| PostgreSQL connection tests | ✅ Completed | Tests validated |
 
 ### **📊 Key Performance Metrics**
 - **Marketing Analytics**: 15 emails sent, 30 social posts analyzed, 5.89% avg engagement rate
@@ -108,18 +108,24 @@ Technical Objectives & Skills Demonstrated
 - ✅ Integrated **Brevo API** for automated email campaigns
 - ✅ Implemented **error handling** and logging mechanisms
 - ✅ Managed **environment variables** and secure API key storage
-- ✅ Entraîner des modèles ML pour prédire les conversions (Logistic Regression + Random Forest)
 
 ---
 
 ## 🛠️ Installation
- the repository**
-```bash
-git clone https://github.com/eosoukaina/TP03-Web-Marketing-CRM-Partie1.git
-cd marketing-analytics-ml-crmreSQL 13+ ([Télécharger ici](https://www.postgresql.org/download/))
-- Compte Brevo ([Inscription gratuite](https://www.brevo.com/))
+
+### **Prerequisites**
+- Python 3.11+
+- PostgreSQL 13+ ([Download here](https://www.postgresql.org/download/))
+- Brevo account ([Free registration](https://www.brevo.com/))
 - Git
-eate virtual environment**
+
+### **1. Clone the repository**
+```bash
+git clone https://github.com/eosoukaina/Marketing-Analytics-and-ML-Driven-CRM-System.git
+cd Marketing-Analytics-and-ML-Driven-CRM-System
+```
+
+### **2. Create virtual environment**
 ```bash
 python -m venv .venv
 .venv\Scripts\Activate.ps1  # Windows PowerShell
@@ -134,21 +140,24 @@ pip install -r requirements.txt
 
 ### **4. Configure environment variables**
 
-**For Part 1 (Marketing Automation):** Create `.env` at root
-```bash
-pip install -r requirements.txt
-```
-
-### **4. Configurer les variables d'environnement**
-For Part 2 (Data Pipeline):** Create `partie2/.env`
-**Pour la Partie 1 :** Créer `.env` à la racine :
+**For Part 1 (Marketing Automation):** Create `.env` at root:
 ```env
-BREVO_API_KEY=votre_cle_api_brevo
+BREVO_API_KEY=your_brevo_api_key
 SENDER_EMAIL=hello@startup.com
 SENDER_NAME=Startup Team
 ```
 
-**Pour la Partie 2 :** Créer `partie2/.env` :
+**For Part 2 (Data Pipeline):** Create `partie2/.env`:
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=marketing_db
+DB_USER=postgres
+DB_PASSWORD=your_password
+MATOMO_API_URL=https://your-instance.matomo.cloud/
+
+### Social Media Analytics - Engagement Metrics
+<img width="409" height="326" alt="Image" src="https://github.com/user-attachments/assets/814ab28e-b789-49fc-84e6-1f045dce4847" />
 ```env
 DB_HOST=localhost
 DB_PORT=5432
